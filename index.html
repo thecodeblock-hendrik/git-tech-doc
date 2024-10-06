@@ -1,84 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./resources/css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./resources/css/styles.css" />
     <title>git-technical-documentation-page</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <nav id="navbar">
-        <header>
-            <h1>Git Documentation</h1>
-        </header>
+      <header>
+        <h1>Git Documentation</h1>
+      </header>
 
-        <ul>
-            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
-            <li><a class="nav-link" href="#Installation_&_Guis">Installation & Guis</a></li>
-            <li><a class="nav-link" href="#Setup">Setup</a></li>
-            <li><a class="nav-link" href="#Setup_&_Init">Setup & Init</a></li>
-            <li><a class="nav-link" href="#Stage_&_Snapshot">Stage & Snapshot</a></li>
-            <li><a class="nav-link" href="#Branch_&_Merge">Branch & Merge</a></li>
-            <li><a class="nav-link" href="#Inspect_&_Compare">Inspect & Compare</a></li>
-            <li><a class="nav-link" href="#Tracking_Path_Changes">Tracking Path Changes</a></li>
-            <li><a class="nav-link" href="#Ignoring_Patterns">Ignoring Patterns</a></li>
-            <li><a class="nav-link" href="#Share_&_Update">Share & Update</a></li>
-            <li><a class="nav-link" href="#Rewrite_History">Rewrite History</a></li>
-            <li><a class="nav-link" href="#Temporary_Commits">Temporary Commits</a></li>
-        </ul>
+      <ul>
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li>
+          <a class="nav-link" href="#Installation_&_Guis"
+            >Installation & Guis</a
+          >
+        </li>
+        <li><a class="nav-link" href="#Setup">Setup</a></li>
+        <li><a class="nav-link" href="#Setup_&_Init">Setup & Init</a></li>
+        <li>
+          <a class="nav-link" href="#Stage_&_Snapshot">Stage & Snapshot</a>
+        </li>
+        <li><a class="nav-link" href="#Branch_&_Merge">Branch & Merge</a></li>
+        <li>
+          <a class="nav-link" href="#Inspect_&_Compare">Inspect & Compare</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Tracking_Path_Changes"
+            >Tracking Path Changes</a
+          >
+        </li>
+        <li>
+          <a class="nav-link" href="#Ignoring_Patterns">Ignoring Patterns</a>
+        </li>
+        <li><a class="nav-link" href="#Share_&_Update">Share & Update</a></li>
+        <li><a class="nav-link" href="#Rewrite_History">Rewrite History</a></li>
+        <li>
+          <a class="nav-link" href="#Temporary_Commits">Temporary Commits</a>
+        </li>
+        <li>
+            <a class="nav-link" href="#Reference">Reference</a>
+          </li>
+      </ul>
     </nav>
 
     <main id="main-doc">
-        <section id="Introduction" class="main-section">
-            <header><h2>Introduction</h2></header>
-        </section>
+      <section id="Introduction" class="main-section">
+        <header><h2>Introduction</h2></header>
+        <p>
+          Git is the free and open source distributed version control system
+          that's responsible for everything GitHub related that happens locally
+          on your computer. This cheat sheet features the most important and
+          commonly used Git commands for easy reference.
+        </p>
+      </section>
 
-        <section id="Installation_&_Guis" class="main-section">
-            <header><h2>Installation & Guis</h2></header>
-        </section>
+      <section id="Installation_&_Guis" class="main-section">
+        <header><h2>Installation & Guis</h2></header>
+        <p>
+          With platform specific installers for Git, GitHub also provides the
+          ease of staying up-to-date with the latest releases of the command
+          line tool while providing a graphical user interface for day-to-day
+          interaction, review, and repository synchronization.
+        </p>
+        <ul>
+          <li><a href="https://windows.github.com" target="_blank">GitHub for Windows</a></li>
+          <li><a href="https://mac.github.com" target="_blank">GitHub for Mac</a></li>
+          <li>
+            For Linux and Solaris platforms, the latest release is available on
+            the official Git web site.</li>
+          <li><a href="http://git-scm.com" target="_blank">GitHub for All Platforms</a></li>
+        </ul>
+      </section>
 
-        <section id="Setup" class="main-section">
-            <header><h2>Setup</h2></header>
-        </section>
+      <section id="Setup" class="main-section">
+        <header><h2>Setup</h2></header>
+        <p>Configuring user information used across all local repositories</p>
 
-        <section id="Setup_&_Init" class="main-section">
-            <header><h2>Setup & Init</h2></header>
-        </section>
+        <code>git config --global user.name “[firstname lastname]”</code>
+        <p>
+          set a name that is identifiable for credit when review version history
+        </p>
 
-        <section id="Stage_&_Snapshot" class="main-section">
-            <header><h2>Stage & Snapshot</h2></header>
-        </section>
+        <code>git config --global user.email “[valid-email]”</code>
+        <p>
+          set an email address that will be associated with each history marker
+        </p>
 
-        <section id="Branch_&_Merge" class="main-section">
-            <header><h2>Branch & Merge</h2></header>
-        </section>
+        <code>git config --global color.ui auto</code>
+        <p>set automatic command line coloring for Git for easy reviewing</p>
+      </section>
 
-        <section id="Inspect_&_Compare" class="main-section">
-            <header><h2>Inspect & Compare</h2></header>
-        </section>
+      <section id="Setup_&_Init" class="main-section">
+        <header><h2>Setup & Init</h2></header>
+        <p>
+          Configuring user information, initializing and cloning repositories
+        </p>
+        <code>git init</code>
+        <p>initialize an existing directory as a Git repository</p>
 
-        <section id="Tracking_Path_Changes" class="main-section">
-            <header><h2>Tracking Path Changes</h2></header>
-        </section>
+        <code>git clone [url]</code>
+        <p>retrieve an entire repository from a hosted location via URL</p>
+      </section>
 
-        <section id="Ignoring_Patterns" class="main-section">
-            <header><h2>Ignoring Patterns</h2></header>
-        </section>
+      <section id="Stage_&_Snapshot" class="main-section">
+        <header><h2>Stage & Snapshot</h2></header>
+        <p>Working with snapshots and the Git staging area</p>
 
-        <section id="Share_&_Update" class="main-section">
-            <header><h2>Share & Update</h2></header>
-        </section>
+        <code>git status</code>
+        <p>
+          show modified files in working directory, staged for your next commit
+        </p>
 
-        <section id="Rewrite_History" class="main-section">
-            <header><h2>Rewrite History</h2></header>
-        </section>
+        <code>git add [file]</code>
+        <p>add a file as it looks now to your next commit (stage)</p>
 
-        <section id="Temporary_Commits" class="main-section">
-            <header><h2>Temporary Commits</h2></header>
-        </section>
+        <code>git reset [file]</code>
+        <p>unstage a file while retaining the changes in working directory</p>
 
+        <code>git diff</code>
+        <p>diﬀ of what is changed but not staged</p>
+
+        <code>git diff --staged</code>
+        <p>diﬀ of what is staged but not yet committed</p>
+
+        <code>git commit -m “[descriptive message]”</code>
+        <p>commit your staged content as a new commit snapshot</p>
+      </section>
+
+      <section id="Branch_&_Merge" class="main-section">
+        <header><h2>Branch & Merge</h2></header>
+        <p>
+          Isolating work in branches, changing context, and integrating changes
+        </p>
+
+        <code>git branch</code>
+        <p>
+          list your branches. a * will appear next to the currently active
+          branch
+        </p>
+
+        <code>git branch [branch-name]</code>
+        <p>create a new branch at the current commit</p>
+
+        <code>git checkout</code>
+        <p>
+          switch to another branch and check it out into your working directory
+        </p>
+
+        <code>git merge [branch]</code>
+        <p>merge the specified branch’s history into the current one</p>
+
+        <code>git log</code>
+        <p>show all commits in the current branch’s history</p>
+      </section>
+
+      <section id="Inspect_&_Compare" class="main-section">
+        <header><h2>Inspect & Compare</h2></header>
+        <p>Examining logs, diﬀs and object information</p>
+
+        <code>git log</code>
+        <p>show the commit history for the currently active branch</p>
+
+        <code>git log branchB..branchA</code>
+        <p>show the commits on branchA that are not on branchB</p>
+
+        <code>git log --follow [file]</code>
+        <p>show the commits that changed file, even across renames</p>
+
+        <code>git diff branchB...branchA</code>
+        <p>show the diﬀ of what is in branchA that is not in branchB</p>
+
+        <code>git show [SHA]</code>
+        <p>show any object in Git in human-readable format</p>
+      </section>
+
+      <section id="Tracking_Path_Changes" class="main-section">
+        <header><h2>Tracking Path Changes</h2></header>
+
+        <p>Versioning file removes and path changes</p>
+
+        <code>git rm [file]</code>
+        <p>delete the file from project and stage the removal for commit</p>
+
+        <code>git rebase [branch]</code>
+        <p>apply any commits of current branch ahead of specified one</p>
+
+        <code>git mv [existing-path] [new-path]</code>
+        <p>change an existing file path and stage the move</p>
+
+        <code>git reset --hard [commit]</code>
+        <p>clear staging area, rewrite working tree from specified commit</p>
+
+        <code>git log --stat -M</code>
+        <p>show all commit logs with indication of any paths that moved</p>
+      </section>
+
+      <section id="Ignoring_Patterns" class="main-section">
+        <header><h2>Ignoring Patterns</h2></header>
+
+        <p>Preventing unintentional staging or commiting of files</p>
+
+        <code>logs/ *.notes pattern*/</code>
+        <p>
+          Save a file with desired patterns as .gitignore with either direct
+          string matches or wildcard globs.
+        </p>
+
+        <code>git config --global core.excludesfile [file]</code>
+        <p>system wide ignore pattern for all local repositories</p>
+      </section>
+
+      <section id="Share_&_Update" class="main-section">
+        <header><h2>Share & Update</h2></header>
+
+        <p>
+          Retrieving updates from another repository and updating local repos
+        </p>
+
+        <code>git remote add [alias] [url]</code>
+        <p>add a git URL as an alias</p>
+
+        <code>git fetch [alias]</code>
+        <p>fetch down all the branches from that Git remote</p>
+
+        <code>git merge [alias]/[branch]</code>
+        <p>
+          merge a remote branch into your current branch to bring it up to date
+        </p>
+
+        <code>git push [alias] [branch]</code>
+        <p>transmit local branch commits to the remote repository branch</p>
+
+        <code>git pull</code>
+        <p>fetch and merge any commits from the tracking remote branch</p>
+      </section>
+
+      <section id="Rewrite_History" class="main-section">
+        <header><h2>Rewrite History</h2></header>
+        <p>Rewriting branches, updating commits and clearing history</p>
+
+        <code>git rebase [branch]</code>
+        <p>apply any commits of current branch ahead of specified one</p>
+
+        <code>git reset --hard> [commit]</code>
+        <p>
+          change an existing file path and stage the move clear staging area,
+          rewrite working tree from specified commit
+        </p>
+      </section>
+
+      <section id="Temporary_Commits" class="main-section">
+        <header><h2>Temporary Commits</h2></header>
+
+        <p>
+          Temporarily store modified, tracked files in order to change branches
+        </p>
+
+        <code>git stash</code>
+        <p>save modified and staged changes</p>
+
+        <code>git stash list</code>
+        <p>list stack-order of stashed file changes</p>
+
+        <code>git stash pop</code>
+        <p>apply working changes from the top of stash stack</p>
+
+        <code>git stash drop</code>
+        <p>discard the changes from the top of stash stack</p>
+      </section>
+
+      <section id="Reference" class="main-section">
+        <header><h2>Reference</h2></header>
+        <ul>
+            <li>All the documentation in this page is taken from <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank">GitHub Git Cheat Sheet Education</a></li>
+        </ul>
+
+      
     </main>
-    
-</body>
+  </body>
 </html>
