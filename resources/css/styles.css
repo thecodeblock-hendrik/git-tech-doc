@@ -1,26 +1,105 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Open Sans", sans-serif;
+  font-weight: thin;
 }
 
 body {
-
-    margin: 0;
-    height: 100vh;
+  margin: 0;
+  height: 100vh;
+  padding: 0;
 }
 
 #navbar {
-    position: fixed;
-    height: 100vh;
-    min-width: 290px;
-    width: 300px;
-    height: 100%;
-    border-right: solid;
-    border-color: rgba(0, 22, 22, 0.4);
+  position: fixed;
+  height: 100vh;
+  min-width: 290px;
+  width: 300px;
+  height: 100%;
+  border-right: solid;
+  border-color: rgba(0, 22, 22, 0.4);
 }
 
 #main-doc {
-    position: absolute;
-    margin-left: 310px;
-    padding: 20px;
-    margin-bottom: 110px;
+  position: absolute;
+  margin-left: 310px;
+  padding: 20px;
+  margin-bottom: 110px;
 }
+
+#navbar header {
+  padding: 10px 10px 10px 0;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#navbar ul {
+  margin-top: 0;
+  padding-left: 0;
+}
+
+#navbar ul li {
+  list-style: none;
+  display: block;
+  width: 100%;
+  padding: 15px 15px 15px 25px;
+  border-top: 1px solid rgba(0, 22, 22, 0.4);
+}
+
+.main-section p,
+.main-section li,
+.main-section li a,
+.nav-link {
+    color: #205f55;;
+}
+
+.main-section header {
+  font-size: 1.8rem;
+  padding: 10px 10px 0 0;
+  margin: 0;
+  
+}
+
+.main-section ul {
+    margin-left: 25px;
+    
+}
+
+.main-section p {
+    padding: 0px 12px;
+}
+
+
+
+
+.main-section li {
+    padding: 5px 0;
+}
+
+.main-section code {
+    display: block;
+    background-color: #dfe0dd;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+.main-section span {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.code-description {
+    font-size: 1rem;
+    margin-left: 20px;
+}
+
